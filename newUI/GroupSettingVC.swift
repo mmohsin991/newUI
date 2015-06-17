@@ -14,12 +14,20 @@ class GroupSettingVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        if self.navigationController?.navigationItem.leftBarButtonItem != nil {
+            self.navigationItem.leftBarButtonItem?.image = UIImage(named: "NotificationIcon")
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+
     
 
     /*
