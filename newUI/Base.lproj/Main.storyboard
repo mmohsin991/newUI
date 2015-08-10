@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0Ao-j1-oKx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -335,6 +336,9 @@
                                                     <state key="normal" title="Button">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="option:" destination="RMQ-gq-s6v" eventType="touchUpInside" id="hf5-Ux-oLa"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MemberPicture" translatesAutoresizingMaskIntoConstraints="NO" id="Wvh-rl-r4A">
                                                     <rect key="frame" x="13" y="5" width="60" height="60"/>
@@ -363,6 +367,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="btnOption" destination="YUf-Qr-qim" id="4QP-op-y2k"/>
                                             <outlet property="email" destination="wdA-3V-ERz" id="02x-Uh-Qtt"/>
                                             <outlet property="imgView" destination="Wvh-rl-r4A" id="fYc-iJ-hqZ"/>
                                             <outlet property="name" destination="VnT-6s-tTb" id="5ga-J9-PZ3"/>
@@ -376,7 +381,7 @@
                                 </connections>
                             </tableView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="🔍 Find By Name, Phone or email" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="moC-hD-102">
-                                <rect key="frame" x="16" y="153" width="196" height="30"/>
+                                <rect key="frame" x="16" y="153" width="179" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="HrS-PN-rWe"/>
                                 </constraints>
@@ -390,7 +395,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AtJ-va-AaF">
-                                <rect key="frame" x="220" y="153" width="84" height="31"/>
+                                <rect key="frame" x="203" y="153" width="101" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="YIZ-uM-Zb3"/>
                                 </constraints>
@@ -433,9 +438,9 @@
                             <constraint firstItem="NUP-5B-BP8" firstAttribute="top" secondItem="hPZ-yn-lc1" secondAttribute="bottom" constant="8" id="DUE-Eh-gfA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qm1-4M-xBb" secondAttribute="trailing" constant="-16" id="IhU-5U-ZyP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NUP-5B-BP8" secondAttribute="trailing" constant="-18" id="R1n-qA-0yt"/>
-                            <constraint firstItem="moC-hD-102" firstAttribute="width" secondItem="soc-dv-UtA" secondAttribute="height" multiplier="191:568" constant="5" id="Szb-Bu-8cd"/>
+                            <constraint firstItem="moC-hD-102" firstAttribute="width" secondItem="soc-dv-UtA" secondAttribute="height" multiplier="191:568" constant="-12" id="Szb-Bu-8cd"/>
                             <constraint firstItem="moC-hD-102" firstAttribute="top" secondItem="NUP-5B-BP8" secondAttribute="bottom" constant="8" id="TLU-if-v4n"/>
-                            <constraint firstAttribute="width" secondItem="AtJ-va-AaF" secondAttribute="width" multiplier="320:84" id="Uec-Mj-MSn"/>
+                            <constraint firstAttribute="width" secondItem="AtJ-va-AaF" secondAttribute="width" multiplier="320:84" constant="-64.761904761904759" id="Uec-Mj-MSn"/>
                             <constraint firstItem="4wj-lV-iiy" firstAttribute="top" secondItem="35B-Sa-JAc" secondAttribute="bottom" id="Vip-aE-LOI"/>
                             <constraint firstItem="u64-WS-06c" firstAttribute="top" secondItem="Orn-rg-MLu" secondAttribute="bottom" constant="-20" id="XQU-0S-6Au"/>
                             <constraint firstItem="u64-WS-06c" firstAttribute="leading" secondItem="soc-dv-UtA" secondAttribute="leadingMargin" constant="-16" id="Yb7-Vl-9Kx"/>
@@ -652,6 +657,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H78-Pc-aHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="786" y="841"/>
+        </scene>
+        <!--OptionsTVC-->
+        <scene sceneID="8FT-sh-Eud">
+            <objects>
+                <tableViewController storyboardIdentifier="OptionVCID" id="bgE-aq-aGN" customClass="OptionsTVC" customModule="newUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="35" sectionHeaderHeight="22" sectionFooterHeight="22" id="g9R-ae-WHQ">
+                        <rect key="frame" x="0.0" y="0.0" width="140" height="105"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="RYo-uT-aT1" style="IBUITableViewCellStyleDefault" id="2eG-zh-8gD">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2eG-zh-8gD" id="0dY-Jk-hIJ">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RYo-uT-aT1">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bgE-aq-aGN" id="17n-76-Ysf"/>
+                            <outlet property="delegate" destination="bgE-aq-aGN" id="iQZ-Xz-0ei"/>
+                        </connections>
+                    </tableView>
+                    <value key="contentSizeForViewInPopover" type="size" width="140" height="105"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="140" height="105"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EfD-yO-ytA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1178" y="767"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="FaI-og-jla">
+            <objects>
+                <tableViewController storyboardIdentifier="tempVC" id="ayV-5k-ALK" customClass="TableViewController" customModule="newUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YFe-6Q-ni1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="ln4-Vm-cE4" style="IBUITableViewCellStyleDefault" id="fGB-gP-iJC">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fGB-gP-iJC" id="RV3-7f-Ixe">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ln4-Vm-cE4">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ayV-5k-ALK" id="mPr-Q2-Z7w"/>
+                            <outlet property="delegate" destination="ayV-5k-ALK" id="Y63-T9-n8h"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nD6-uk-tYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1456" y="927"/>
         </scene>
     </scenes>
     <resources>

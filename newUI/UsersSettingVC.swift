@@ -11,7 +11,7 @@ import UIKit
 let kGreenColor = UIColor(red: 48/256, green: 168/256, blue: 89/256, alpha: 1.0)
 
 
-class UsersSettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+class UsersSettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate , UIPopoverPresentationControllerDelegate{
 
     
     
@@ -120,7 +120,7 @@ class UsersSettingVC: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.imgView.layer.cornerRadius = cell.imgView.frame.size.width/2
         cell.imgView.layer.masksToBounds = true
         cell.imgView.layer.borderColor = UIColor.grayColor().CGColor
-        
+        cell.btnOption.tag = indexPath.row
 
         return cell
     }
@@ -129,7 +129,77 @@ class UsersSettingVC: UIViewController, UITableViewDataSource, UITableViewDelega
         return 70.0
     }
     
-
+    
+    // for popover VC
+    @IBAction func option(sender: UIButton) {
+        println(sender.tag)
+        
+        var optionCV = storyboard!.instantiateViewControllerWithIdentifier("OptionVCID") as? OptionsTVC
+        
+        optionCV?.modalPresentationStyle = UIModalPresentationStyle.Popover
+        
+        let popoverOptionCV = optionCV?.popoverPresentationController
+        popoverOptionCV?.permittedArrowDirections = UIPopoverArrowDirection.Unknown
+        popoverOptionCV?.delegate = self
+        
+        popoverOptionCV?.sourceView = sender
+        
+        
+        self.presentViewController(optionCV!, animated: true, completion: nil)
+    }
+    
+//
+//    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+//        
+//        // select the device
+//        selectedDeviceName = sortedDevices[indexPath.row]
+//        
+//        let cell = collectionView.cellForItemAtIndexPath(indexPath) as  DeviceCell
+//        
+//        
+//        let selectedDeviceImgName = homeArchGloble[self.selectedRoomName!]![cell.lblName.text!]
+//        
+//        
+//        //cell.backgroundColor = UIColor.lightGrayColor()
+//        
+//        var menuViewController = storyboard!.instantiateViewControllerWithIdentifier("deviceVCID") as? DeviceVC
+//        
+//        
+//        menuViewController?.modalPresentationStyle = .Popover
+//        menuViewController?.preferredContentSize = CGSizeMake(260, 340)
+//        
+//        
+//        let selectedCell = collectionView.cellForItemAtIndexPath(indexPath) as DeviceCell
+//        
+//        menuViewController?.imgDeviceVARString = selectedDeviceImgName!
+//        menuViewController?.nameVAR = selectedDeviceName
+//        
+//        
+//        
+//        let popoverMenuViewController = menuViewController?.popoverPresentationController
+//        popoverMenuViewController?.permittedArrowDirections = UIPopoverArrowDirection.allZeros
+//        popoverMenuViewController?.delegate = self
+//        popoverMenuViewController?.sourceView = self.view
+//        
+//        
+//        // calculate center for popover
+//        let x = self.view.center.x - 130.0
+//        let y = self.view.center.y - 170.0
+//        
+//        popoverMenuViewController?.sourceRect = CGRect(origin: CGPoint(x: x, y: y), size: CGSize(width: 260.0, height: 340.0))
+//        
+//        
+//        //popoverMenuViewController?.sourceRect = CGRect(x: 65.0, y: self.view.frame.width/3.2, width: 260.0, height: 340.0)
+//        
+//        
+//        presentViewController( menuViewController!, animated: true, completion: nil)
+//        
+//        
+//    }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.None
+    }
 }
 
 
@@ -139,6 +209,9 @@ class UserCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var phoneNumber: UILabel!
+    
+    @IBOutlet weak var btnOption: UIButton!
+    
     
     
 }

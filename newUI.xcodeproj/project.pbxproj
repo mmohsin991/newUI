@@ -14,6 +14,8 @@
 		422A4B5E1B319EED0063B0FF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 422A4B5C1B319EED0063B0FF /* LaunchScreen.xib */; };
 		422A4B6A1B319EED0063B0FF /* newUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A4B691B319EED0063B0FF /* newUITests.swift */; };
 		422A4B741B31A23F0063B0FF /* GroupSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A4B731B31A23F0063B0FF /* GroupSettingVC.swift */; };
+		4230B9811B34005D00F4FD03 /* OptionsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4230B9801B34005D00F4FD03 /* OptionsTVC.swift */; };
+		4230B9831B34473200F4FD03 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4230B9821B34473200F4FD03 /* TableViewController.swift */; };
 		423414F91B31CD8B005842BB /* UserImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423414F81B31CD8B005842BB /* UserImageView.swift */; };
 		42B6BF1E1B31A96B00CDC23E /* ProfileSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B6BF1D1B31A96B00CDC23E /* ProfileSettingVC.swift */; };
 		42B6BF201B31A98600CDC23E /* UsersSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B6BF1F1B31A98600CDC23E /* UsersSettingVC.swift */; };
@@ -43,6 +45,8 @@
 		422A4B681B319EED0063B0FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		422A4B691B319EED0063B0FF /* newUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newUITests.swift; sourceTree = "<group>"; };
 		422A4B731B31A23F0063B0FF /* GroupSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupSettingVC.swift; sourceTree = "<group>"; };
+		4230B9801B34005D00F4FD03 /* OptionsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTVC.swift; sourceTree = "<group>"; };
+		4230B9821B34473200F4FD03 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		423414F81B31CD8B005842BB /* UserImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserImageView.swift; sourceTree = "<group>"; };
 		42B6BF1D1B31A96B00CDC23E /* ProfileSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingVC.swift; sourceTree = "<group>"; };
 		42B6BF1F1B31A98600CDC23E /* UsersSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersSettingVC.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 				42B6BF211B31C92900CDC23E /* FencingSettingVC.swift */,
 				42B6BF231B31C94A00CDC23E /* TeamsSettingVC.swift */,
 				423414F81B31CD8B005842BB /* UserImageView.swift */,
+				4230B9821B34473200F4FD03 /* TableViewController.swift */,
+				4230B9801B34005D00F4FD03 /* OptionsTVC.swift */,
 				422A4B571B319EED0063B0FF /* Main.storyboard */,
 				422A4B5A1B319EED0063B0FF /* Images.xcassets */,
 				422A4B5C1B319EED0063B0FF /* LaunchScreen.xib */,
@@ -233,7 +239,9 @@
 				42B6BF221B31C92900CDC23E /* FencingSettingVC.swift in Sources */,
 				422A4B741B31A23F0063B0FF /* GroupSettingVC.swift in Sources */,
 				42B6BF1E1B31A96B00CDC23E /* ProfileSettingVC.swift in Sources */,
+				4230B9831B34473200F4FD03 /* TableViewController.swift in Sources */,
 				422A4B561B319EED0063B0FF /* ViewController.swift in Sources */,
+				4230B9811B34005D00F4FD03 /* OptionsTVC.swift in Sources */,
 				423414F91B31CD8B005842BB /* UserImageView.swift in Sources */,
 				42B6BF201B31A98600CDC23E /* UsersSettingVC.swift in Sources */,
 				422A4B541B319EED0063B0FF /* AppDelegate.swift in Sources */,
